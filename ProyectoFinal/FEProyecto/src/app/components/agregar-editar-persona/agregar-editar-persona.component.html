@@ -1,0 +1,126 @@
+<h3> {{ accion }} Persona</h3>
+<br>
+<div class="spinner-border text-primary" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+</div>
+<form [formGroup]="personas" (ngSubmit)="guardarPersona()">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Nombre</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="nombre">
+            </div>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('nombre').hasError('required')  && personas.get('nombre').touched">
+                El nombre es requerido</span>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Apellido</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="apellido">
+                <span class="text-danger ml-3"
+                    *ngIf="personas.get('apellido').hasError('required')  && personas.get('apellido').touched">
+                    El apellido es requerido</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Tipo Documento</label>
+            <select class="form-control" formControlName="tipoDocumento">
+                <option value="">Seleccionar...</option>
+                <option>TI</option>
+                <option>CC</option>
+              </select>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('tipoDocumento').hasError('required')  && personas.get('tipoDocumento').touched">El
+                tipo de documento es requerido</span>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Documento</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="documento">
+            </div>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('documento').hasError('required')  && personas.get('documento').touched">El
+                documento es
+                requerido</span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Ciudad</label>
+            <select class="form-control" formControlName="lugarResidencia">
+                <option value="">Seleccionar...</option>
+                <option>Bogotá</option>
+                <option>Medellín</option>
+                <option>Cali</option>
+                <option>Barranquilla</option>
+                <option>Bucaramanga</option>
+                <option>Cartagena</option>
+                <option>Cúcuta</option>
+                <option>Santa Marta</option>
+                <option>Valledupar</option>
+                <option>Manizales</option>
+                <option>Pereira</option>
+                <option>Ocaña</option>
+              </select>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('lugarResidencia').hasError('required')  && personas.get('lugarResidencia').touched">El
+                lugar de
+                residencia es requerido</span>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Fecha Nac.</label>
+            <div class="col-md-12">
+                <input type="date" class="form-control" formControlName="fechaNacimiento">
+            </div>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('fechaNacimiento').hasError('required')  && personas.get('fechaNacimiento').touched">La
+                fecha de nacimiento es requerida</span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Email</label>
+            <div class="col-md-12">
+                <input type="email" class="form-control" formControlName="email">
+            </div>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('email').hasError('required')  && personas.get('email').touched">El email es
+                requerido</span>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Telefono</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="telefono">
+            </div>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('telefono').hasError('required') && personas.get('telefono').touched">
+                El telefono es requerido</span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Usuario</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="usuario">
+            </div>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('usuario').hasError('required')  && personas.get('usuario').touched">El usuario es
+                requerido</span>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label col-md12">Contraseña</label>
+            <div class="col-md-12">
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <span class="text-danger ml-3"
+                *ngIf="personas.get('password').hasError('required')  && personas.get('password').touched">La contraseña
+                es requerida</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success float-right" [disabled]="personas.invalid">Aceptar</button>
+    </div>
+</form>

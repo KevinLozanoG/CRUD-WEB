@@ -1,0 +1,19 @@
+<div class="spinner-border text-primary" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+</div>
+<div>
+    <h3>{{ persona.id }}</h3>
+    <h5>{{ persona.nombre }} {{ persona.apellido }} </h5>
+    <br>
+    <h6>Datos:</h6>
+    <ul>
+        <li>{{ persona.tipoDocumento }}</li>
+        <li>{{ persona.documento }}</li>
+        <li>{{ persona.lugarResidencia }}</li>
+        <li>{{ persona.fechaNacimiento }}</li>
+        <li>{{ persona.email }}</li>
+        <li>{{ persona.telefono }}</li>
+        <li>{{ persona.usuario }}</li>
+        <li>{{ persona.password }}</li>
+    </ul>
+</div>
