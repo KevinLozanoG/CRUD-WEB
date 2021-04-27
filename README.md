@@ -1,5 +1,1 @@
-# Proyecto Final Web
-
-Integrantes: <br>
-2172016. Kevin Javier Lozano Galvis. <br>
-2170112. Iván Daniel Maestre Muza.
+# Diseño de un CRUD con Angular, NET Core, Entity Framework Core y MySQL.
